@@ -4,10 +4,9 @@ nvm --version # to check if nvm is not installed
 # if nvm is not installed run this else skip
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-nvm install 11.6
-nvm use
-npm i -g yarn
-yarn install
+nvm install 11.8
+nvm use 11.8
+npm install
 ```
 
 Install mongodb
