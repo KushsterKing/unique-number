@@ -24,15 +24,14 @@ app.get('/:fancy/:number?', async (req, res)=>{
             do {
                 number = Math.round(10000000000 * Math.random());
                 count = await PhoneNumber.count({phoneNumber: number.toString()});
-                // console.log('phone', count)
             } while (number < 1111111111 || count > 0);
 
             const phoneToAdd = new PhoneNumber({phoneNumber: number.toString()});
             await phoneToAdd.save();
 
-            res.send('not fancy number ' + number)
+            res.status(200).send('non fancy number ' + number)
         } else {
-            res.send('The fancy param should either be yes or no.')
+            res.status(400).send('The fancy param should either be yes or no.')
         }
     } catch(e){
         console.log(e)

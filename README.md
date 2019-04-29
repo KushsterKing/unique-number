@@ -32,3 +32,13 @@ To run the project and server in watch node <br>
 ```
 node app.js
 ```
+
+To see results hit the following api with two arguments, fancy and number. Fancy can have the values yes, in which case, the value of the second argument(number) should be a ten digit number between 1111111111 and 9999999999, and no, in which case you do not need to provide the second argument(number). 
+```
+http://localhost:3000/:fancy/:number
+
+Example:
+http://localhost:3000/yes/4938203829
+
+http://localhost:3000/no/
+```
